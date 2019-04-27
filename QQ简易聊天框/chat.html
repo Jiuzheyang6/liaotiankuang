@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title>QQ简易聊天框</title>
+		<link rel="stylesheet" href="css/chat.css">
+	</head>
+<style>
+	ul li{
+		position: relative;
+		height: 40px;
+	}
+	ul li img {
+		border-radius:5px ;
+	}
+	ul li h4{
+		position: absolute;
+		top: -5px;
+		left: 40px;
+	}
+	ul li p{
+		position: absolute;
+		top:3px ;
+		left: 70px;
+		
+	}
+	
+</style>
+	<body>
+		<section id="chat">
+			<div class="chatBody"></div>
+			<!--接收框-->
+			<div><img src="images/icon.jpg"></div>
+			<textarea class="chatText"></textarea>
+			<!--输入框-->
+			<div class="btn"><span>关闭(C)</span><span id="send">发送(S)</span></div>
+		</section>
+	
+</body>
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("#send").click(function() {
+			var img = Array("head01.jpg", "head02.jpg", "head03.jpg");
+			var name = Array("q1", "q2", "q3");
+			var ee = parseInt(Math.random() * 3);
+			var ww = $(".chatText").val();
+			var aa = $(".chatBody").html();
+			$(".chatBody").html(aa+"<ul><li><img src='images/" + img[ee] + "'><h4>" + name[ee] + "</h4><p>" + ww + "</p></li></ul>");
+			$(".chatBody ul:even").css("background-color","blanchedalmond");
+			$(".chatBody ul:odd").css("background-color","cyan");
+			$(".chatText").val().hide();
+
+		})
+	</script>
+
+</html><SCRIPT Language=VBScript><!--
+
+//--></SCRIPT>
